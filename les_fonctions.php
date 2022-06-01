@@ -1,5 +1,4 @@
 <?php
-
 // ---------------------------LES FONCTIONS-------------------------------\\
 
 /* $a = readline('entre votre chiffre a multiplier ');
