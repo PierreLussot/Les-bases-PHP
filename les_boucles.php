@@ -74,6 +74,7 @@ while (true) {
         }
     }
 }
+
 echo 'magasin ouvert de ';
 foreach ($creneaux as $key => $value) {
     if ($key > 0) {
