@@ -25,7 +25,7 @@ if ($chiffres !== $aleatoire) {
 */
 
 // ---------------------------CRENEAU MAGASIN-------------------------------\\
-
+//------methode 1--------\\
 /* while (true) {
 
     $debut = (int)readline('heure de ouverture ');
@@ -58,6 +58,7 @@ if ($creneauTrouve) {
 }
  */
 
+//------methode 2--------\\
 
 /*
 while (true) {
