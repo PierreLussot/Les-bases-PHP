@@ -90,21 +90,24 @@ echo $phrase;
 //
 //echo $phrase = str_replace($mots, $etoile, $phrase);
 
-
+$nbr_tour = 4;
 while (true){
     $ecrire = readline(' entrez notes'." ");
-    if ( $ecrire  === ""){
+    $nbr_tour --;
+    if ( $nbr_tour  === 0 ){
+        echo 'vous pouvez entre que 4 notes maximum'."\n";
         break;
     }else{
         $notes[] = $ecrire;
     }
+
 }
 
 $nbr_note = count($notes);
 $cumul_note = array_sum($notes);
 $resultat = $cumul_note / $nbr_note;
 
-echo round($resultat,2) ;
+echo 'votre moyenne est de '.round($resultat,2) ;
 
 
 
