@@ -5,7 +5,8 @@
 // ---------------------------CALCULE DE MOYENNE-------------------------------\\
 
 //------methode 1--------\\
-/* $a = readline('entre votre chiffre a multiplier ');
+/*
+$a = readline('entre votre chiffre a multiplier ');
 $b = readline('entre votre chiffre multiplicative ');
 
 function multiple($a, $b)
@@ -15,11 +16,13 @@ function multiple($a, $b)
 }
 
 echo multiple($a,$b);
+
  */
 
 //------methode 2--------\\
 
-/* $notes = [10 , 20 ,13];
+/*
+$notes = [10 , 20 ,13];
 
 $cumul_note = array_sum($notes);
 $nbr_note = count($notes);
@@ -32,7 +35,32 @@ $nbr_note = count($notes);
  return round($result ,2)  ;
 
 }
- echo calcule_moyenne($cumul_note, $nbr_note) ;  */
+ echo calcule_moyenne($cumul_note, $nbr_note) ;
+ */
+
+//------methode 3--------\\
+
+/*
+
+$nbr_tour = 0;
+while (true){
+    $ecrire = readline(' entrez notes'." ");
+    $nbr_tour ++;
+    if ( $nbr_tour  === 4 ){
+        echo 'vous pouvez entre que 4 notes maximum'."\n";
+        break;
+    }else{
+        $notes[] = $ecrire;
+    }
+
+}
+$nbr_note = count($notes);
+$cumul_note = array_sum($notes);
+$resultat = $cumul_note / $nbr_note;
+
+echo 'votre moyenne est de '.round($resultat,2) ;
+
+*/
 
 // ---------------------------TROUVER UN PALINDROME-------------------------------\\
 
@@ -56,11 +84,10 @@ echo palindrome($a, $b); */
 // ---------------------------FILTRE A INSULTE-------------------------------\\
 
 //------methode 1--------\\
-
-//$mots = ['merde', 'con'];
-//$phrase = readline('entrez une phrase ');
-
 /*
+
+$mots = ['merde', 'con'];
+$phrase = readline('entrez une phrase ');
 
 foreach ($mots as $mot) {
     $taille_str = strlen($mot);//calcul la taille du mot
@@ -68,7 +95,6 @@ foreach ($mots as $mot) {
     $phrase = str_replace($mot, $remplace_str, $phrase);//remplace les gros mots pas une etoile
 }
 
-str_replace($mot, $remplace_str, $phrase)
 echo $phrase;
 
 */
@@ -78,36 +104,63 @@ echo $phrase;
 //echo $phrase;
 
 //------methode 3--------\\
-//$etoile = [];
-//foreach ($mots as $mot) {
-//
-//    $taille_str = strlen($mot)-1;
-//    $e = substr($mot,0,1);
-//
-//    $etoile[] = $e .str_repeat('*', $taille_str);
-//
-//}
-//
-//echo $phrase = str_replace($mots, $etoile, $phrase);
 
-$nbr_tour = 4;
-while (true){
-    $ecrire = readline(' entrez notes'." ");
-    $nbr_tour --;
-    if ( $nbr_tour  === 0 ){
-        echo 'vous pouvez entre que 4 notes maximum'."\n";
-        break;
-    }else{
-        $notes[] = $ecrire;
-    }
+/*
+
+$etoile = [];
+foreach ($mots as $mot) {
+
+    $taille_str = strlen($mot)-1;
+    $e = substr($mot,0,1);
+
+   $etoile[] = $e .str_repeat('*', $taille_str);
 
 }
 
-$nbr_note = count($notes);
-$cumul_note = array_sum($notes);
-$resultat = $cumul_note / $nbr_note;
+echo $phrase = str_replace($mots, $etoile, $phrase);
 
-echo 'votre moyenne est de '.round($resultat,2) ;
+*/
+
+function loto()
+{
+
+    $i = 1;
+    $int_chance1 = rand(1, 10);
+    $int_chance2 = rand(1, 10);
+    $int_chance3 = rand(1, 10);
+
+    $texte1 = readline('entre un chiffre 1 ');
+    $texte2 = readline('entre un chiffre 2 ');
+    $texte3 = readline('entre un chiffre 3 ');
+
+    while (true) {
+
+        $tabs = [$texte1, $texte2, $texte3];
+
+        if ($i == 3) {
+
+            if ($tabs[0] == $int_chance1 &&
+                $tabs[1] == $int_chance2 &&
+                $tabs[2] == $int_chance3) {
+                echo 'you win' . "\n";
+                break;
+            } else {
+                echo "loose" . "\n";
+            }
+
+            break;
+        }
+
+        $i++;
+    }
+    echo "il vous reste" . $a . "chance";
+
+
+}
+
+
+echo loto();
+
 
 
 
