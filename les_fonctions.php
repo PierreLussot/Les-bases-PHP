@@ -153,11 +153,8 @@ function loto()
 
         $i++;
     }
-    echo "il vous reste" . $a . "chance";
-
 
 }
-
 
 echo loto();
 
